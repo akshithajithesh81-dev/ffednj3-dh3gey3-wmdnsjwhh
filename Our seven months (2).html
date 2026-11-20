@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our seven months</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffe6ee;--paper:#fff8ef;--ink:#4a2b3c;--mute:#8a6578;--red:#e0345b;--lav:#dccdf3;--pink:#ffc4d6;--sh:0 6px 18px #7a3a5a33;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#241328;--paper:#3a2340;--ink:#ffe9f1;--mute:#d2b0cc;--lav:#4b3470;--pink:#7a2f55;--red:#ff6b93}}
+:root[data-theme=dark]{--bg:#241328;--paper:#3a2340;--ink:#ffe9f1;--mute:#d2b0cc;--lav:#4b3470;--pink:#7a2f55;--red:#ff6b93}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:500 16px/1.5 Quicksand,system-ui,sans-serif;background:var(--bg) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence baseFrequency='.8' numOctaves='2'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .3 0 0 0 0 .4 0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");min-height:100vh}
+h2,.hw,.cap{font-family:Caveat,cursive;font-weight:700}
+h2{font-size:44px;line-height:1;color:var(--red);margin:0 0 14px}
+.pg{display:none;padding:64px 16px 120px;max-width:920px;margin:0 auto;position:relative;z-index:1}
+.pg.on{display:block;animation:in .5s}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.mid{min-height:78vh;display:grid;place-content:center;text-align:center;justify-items:center;gap:14px}
+.card,.paper{background:var(--paper);border-radius:14px;padding:16px;box-shadow:var(--sh);margin-bottom:16px}
+.btn{font:inherit;font-weight:700;border:0;border-radius:99px;padding:10px 20px;background:var(--red);color:#fff;cursor:pointer}
+.btn.alt{background:var(--lav);color:var(--ink)}.btn.sm{padding:5px 12px;font-size:13px}
+.btn:focus-visible,.slot:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+input[type=text],input[type=password],input[type=date]{font:inherit;padding:10px 14px;border-radius:99px;border:2px solid var(--pink);background:var(--paper);color:var(--ink)}
+.mute{color:var(--mute)}
+#fl{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#fl i{position:absolute;bottom:-40px;color:var(--red);opacity:.35;animation:fl linear infinite}
+@keyframes fl{to{transform:translateY(-115vh) rotate(40deg)}}
+#top{position:fixed;top:0;left:0;right:0;padding:calc(8px + env(safe-area-inset-top,0px)) 12px 8px;display:none;justify-content:space-between;z-index:20;background:linear-gradient(var(--bg),transparent)}
+.ownerbtn{display:none}body.owner .ownerbtn{display:inline-block}
+.own{display:none}body.edit .own{display:inline-block}
+.ed{white-space:pre-wrap;outline:none}body.edit .ed{outline:1px dashed var(--red);min-width:2ch;display:inline-block}
+.slot{aspect-ratio:4/3;background:var(--lav);border-radius:6px;display:grid;place-items:center;overflow:hidden;color:var(--mute);font-size:13px;text-align:center;padding:6px}
+.slot img{position:absolute;width:100%;height:100%;object-fit:cover;cursor:zoom-in}.slot{position:relative}
+.slot:not(.has)::after{content:'a photo of us goes here ♡'}
+body.edit .slot{cursor:pointer;outline:2px dashed var(--red)}body.edit .slot:not(.has)::after{content:'tap to add a photo'}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.menu button{font:700 17px Quicksand;background:var(--paper);border:0;border-radius:16px;padding:18px 8px;box-shadow:var(--sh);color:var(--ink);cursor:pointer}
+.menu button:hover{transform:rotate(-2deg) scale(1.04)}
+.env{position:relative;width:min(300px,80vw);height:190px;margin:70px auto 20px;cursor:pointer;perspective:700px}
+.env>div{position:absolute;inset:0;border-radius:6px}
+.env .front{background:#f58fb0;clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);z-index:3}
+.env .back{background:#e8719a}
+.env .flap{background:#ff9fbd;clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:top;transition:transform .6s;z-index:4}
+.env .lt{background:var(--paper);inset:8px 12px;z-index:2;transition:transform .8s .3s;padding:10px;color:var(--ink);overflow:hidden}
+.env.open .flap{transform:rotateX(180deg);z-index:1}.env.open .lt{transform:translateY(-125px);z-index:5}
+.env .lt h2{font-size:30px;margin:0}
+.paper{display:none;font:500 22px/1.5 Caveat,cursive;background-image:repeating-linear-gradient(transparent 0 31px,#e0345b22 31px 32px)}
+.env.open+.paper{display:block;animation:in .8s}
+.lay{display:grid;gap:12px}
+.it{position:relative}.x{position:absolute;right:4px;top:4px;z-index:3;background:var(--red);color:#fff;border-radius:50%;width:22px;height:22px;text-align:center;font-size:12px;line-height:22px;cursor:pointer}
+.cap,.ph figcaption,.pol .cap{font-size:21px;line-height:1.1}.ph small{display:block;font:500 12px Quicksand;color:var(--mute)}
+.l-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.l-grid .ph{background:var(--paper);padding:6px;border-radius:8px}
+.l-pola{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px}.l-pola .ph{background:#fff;color:#4a2b3c;padding:10px 10px 6px;box-shadow:var(--sh);transform:rotate(var(--r,-2deg))}
+.l-pola .ph:nth-child(even){--r:2.5deg}.l-pola .ph:nth-child(3n){--r:-4deg}
+.l-film{display:flex;overflow-x:auto;background:#1a1a1a;padding:26px 10px;border-radius:6px}.l-film .ph{flex:0 0 200px;color:#eee;border-top:8px dotted #fff8;border-bottom:8px dotted #fff8;padding:6px}.l-film small{color:#bbb}
+.l-col{display:block;columns:3 140px;gap:10px}.l-col .ph{break-inside:avoid;margin-bottom:10px;background:var(--paper);padding:5px}.l-col .ph:nth-child(3n+1) .slot{aspect-ratio:3/4}.l-col .ph:nth-child(3n+2) .slot{aspect-ratio:1}
+.l-scrap{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:26px}.l-scrap .ph{background:var(--paper);padding:14px 12px 8px;box-shadow:var(--sh);transform:rotate(var(--r,1.5deg))}.l-scrap .ph:nth-child(even){--r:-2deg}.l-scrap .ph::before{content:'';position:absolute;top:-9px;left:35%;width:30%;height:18px;background:#e0a8f066;transform:rotate(-4deg);z-index:2}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fr{background:#fff;color:#4a2b3c;padding:8px 8px 4px;box-shadow:var(--sh);border-radius:4px}.fr .slot{aspect-ratio:3/4}
+.six{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px;margin-bottom:24px}
+.pol{background:#fff;color:#4a2b3c;padding:10px 10px 8px;box-shadow:var(--sh);transform:rotate(var(--r,-2deg));transition:transform .25s}
+.pol:nth-child(even){--r:2deg}.pol:nth-child(3n){--r:-3.5deg}.pol:hover{transform:rotate(0) scale(1.06)}.pol:active{transform:rotate(-4deg) scale(.96)}
+.pl{display:flex;gap:12px;align-items:center}
+.tape{background:#3b2a3f;color:#fff;border-radius:16px;padding:16px;max-width:420px;margin:0 auto 10px}
+.reels{display:flex;justify-content:space-around;margin-bottom:10px}.reel{width:54px;height:54px;border-radius:50%;border:8px dotted #fff;opacity:.9}
+.play .reel{animation:sp 2s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.tape input{flex:1}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.bar{height:12px;background:var(--lav);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--red);transition:width .5s}
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.mc{height:60px;background:var(--lav);border:0;border-radius:10px;color:transparent;font:700 13px Quicksand;cursor:pointer;padding:2px}
+.mc:not(.up):not(.ok)::before{content:'♡';color:var(--red);font-size:22px}.mc.up,.mc.ok{background:var(--paper);color:var(--ink)}.mc.ok{outline:2px solid var(--red)}
+.hh{position:absolute;font-size:36px;color:var(--red);opacity:.95;cursor:pointer;font-style:normal;z-index:5;padding:8px;animation:bt 1.4s infinite;text-shadow:0 0 10px #fff,0 0 18px #ff9fbd}
+.rs{background:var(--paper);border-radius:12px;padding:14px;box-shadow:var(--sh);cursor:pointer;min-height:70px;display:grid;place-items:center;text-align:center}
+.rs::before{content:'tap me ♡';color:var(--red);font:700 22px Caveat}.rs.on::before{content:none}body:not(.edit) .rs:not(.on) .ed{display:none}
+body.edit .rs::before{content:none}
+#rsn{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+details{background:var(--paper);border-radius:12px;padding:10px 14px;margin-bottom:8px;box-shadow:var(--sh)}summary{cursor:pointer;font-weight:700}
+.dr{padding:4px 0}.dr::before{content:'✦ ';color:var(--red)}
+#cn b{font:700 40px Caveat;color:var(--red)}
+#yn{position:relative;height:130px;width:min(320px,90%);margin:30px auto}#yn .btn{position:absolute;top:30px}#fn{left:60%;transition:left .2s,top .2s}#fy{left:5%}
+.jar{width:170px;height:225px;margin:24px auto 8px;position:relative;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.glass{position:absolute;bottom:0;width:100%;height:195px;border:4px solid #fff9;border-radius:30px 30px 50px 50px;background:linear-gradient(135deg,#fff6,#ffc4d655);display:flex;flex-wrap:wrap;align-content:flex-end;justify-content:center;overflow:hidden;font-size:20px;padding:8px}
+.lid{position:absolute;top:0;left:14%;width:72%;height:34px;background:var(--red);border-radius:10px;z-index:2;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.jar.pop .lid{transform:translateY(-95px) rotate(-35deg)}.jar.shake{animation:shk .7s;filter:drop-shadow(0 0 24px #ff5c8a)}
+@keyframes shk{20%{transform:rotate(-8deg)}40%{transform:rotate(8deg)}60%{transform:rotate(-6deg)}80%{transform:rotate(6deg)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}.k{position:absolute;will-change:transform}
+#km{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:60;opacity:0;text-align:center;padding:30px;font:700 clamp(34px,9vw,64px)/1.05 Caveat;color:var(--red);text-shadow:0 2px 0 #fff,0 0 18px #fff}
+#km.on{animation:km 3.8s}@keyframes km{10%,80%{opacity:1;transform:scale(1.05)}0%{transform:scale(.4)}100%{opacity:0}}
+#bye{position:fixed;inset:0;background:#1c0d26;color:#fff;z-index:70;display:none;place-content:center;text-align:center;justify-items:center;gap:20px;padding:24px}
+#bye.on{display:grid;animation:in 1s}#bye .hw{font-size:clamp(30px,7vw,52px);line-height:1.1;max-width:14em}
+#bye .h{font-size:110px;color:#ff4f86;animation:bt 1.2s infinite}@keyframes bt{50%{transform:scale(1.2)}}
+#bye s{position:absolute;text-decoration:none;color:#ffe28a;animation:tw 2s infinite}@keyframes tw{50%{opacity:.1}}
+#mp{position:fixed;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));display:none;background:var(--paper);border-radius:99px;padding:8px 14px;box-shadow:var(--sh);z-index:30;max-width:560px;margin:0 auto}
+body.in #mp{display:flex}#mp .mi{flex:1;min-width:0;font-size:13px}#mp input[type=range]{width:100%}#vol{width:70px!important}
+#pb,.pbtn{width:38px;height:38px;border-radius:50%;border:0;background:var(--red);color:#fff;cursor:pointer;flex:none}
+#set,#aq{position:fixed;inset:0;background:#0007;display:none;place-items:center;z-index:80}#set.on,#aq.on{display:grid}#set .card,#aq .card{display:grid;gap:8px;width:min(320px,90%)}
+#lb{position:fixed;inset:0;background:#000d;display:none;place-items:center;z-index:90;cursor:zoom-out;text-align:center;color:#fff;padding:16px}#lb.on{display:grid}#lb img{max-width:96vw;max-height:80vh;border:10px solid #fff;border-bottom-width:36px}
+#ts{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:99px;z-index:95;opacity:0;pointer-events:none;transition:opacity .3s;max-width:90%;text-align:center}#ts.on{opacity:1}
+@media(prefers-reduced-motion:reduce){#fl i,.reel,#bye .h{animation:none!important}}
+</style>
+</head>
+<body>
+<!-- ============ HOW TO PERSONALIZE (no code needed) ============
+ 1. On the passkey screen tap "owner" and enter the owner code (first time: Akshuhehe).
+ 2. Tap the gear to change the passkey (first time: forever), owner code, secret-page password.
+ 3. Tap the pencil to edit: every dashed text is editable, every dashed photo box takes an upload.
+ 4. Gear > Upload our song. Polaroid page > voice upload. Gear > Export backup.
+ Everything is saved on the device you edit on. -->
+<div id="fl"></div><div id="fx"></div><div id="km">100 kisses weren’t enough, so I sent you a million! MWAHHH 💋</div>
+<div id="top"><button class="btn alt sm" id="home">‹ Home</button><span><button class="btn sm ownerbtn" id="pen">✎ Edit</button> <button class="btn sm ownerbtn" id="gear">⚙</button></span></div>
+
+<section class="pg on" id="p-gate"><div class="mid">
+<div style="font-size:60px">🔐</div><h2>Our little world ♡</h2>
+<p class="mute">Enter our secret word to come in.</p>
+<input type="password" id="pk" placeholder="passkey" autocomplete="off"><button class="btn" id="go">Enter</button>
+<p id="gerr" style="color:var(--red);min-height:1.4em"></p>
+<button class="btn alt sm" id="own">owner</button></div></section>
+
+<section class="pg" id="p-env"><div class="mid">
+<div class="env" id="env1"><div class="back"></div><div class="lt"><h2><t k="wt">Hey, my favourite boy! ♡</t></h2><p><t k="wm">I made you a tiny world. Take your time.</t></p></div><div class="flap"></div><div class="front"></div></div>
+<p class="mute">Tap the envelope</p><button class="btn" id="start" style="visibility:hidden">Start ♡</button></div></section>
+
+<section class="pg" id="p-home"><h2>Where to?</h2><div class="menu" id="menu"></div></section>
+
+<section class="pg" id="p-tk"><h2>Mini love tasks</h2>
+<div class="card"><div class="bar" id="bar"><i></i></div><p id="pc" class="mute"></p></div>
+
+<div class="card"><b>1. Cute questions</b><div id="qc"></div><p><button class="btn alt sm" data-skip="c">Skip</button> <button class="btn sm own" data-eq="c">Edit questions</button></p></div>
+<div class="card"><b>2. How well do you remember us?</b><div id="qr"></div><p><button class="btn alt sm" data-skip="r">Skip</button> <button class="btn sm own" data-eq="r">Edit questions</button></p></div>
+<div class="card"><b>3. Match our memories</b><div class="mg" id="mg"></div><p><button class="btn alt sm" data-skip="m">Skip</button></p></div>
+<div class="card"><b>Secret love note</b><p><button class="btn" id="unl" disabled>Unlock</button></p><p id="sn" class="cap" hidden><t k="secnote">You finished everything. I love you more than I can fit in a note.</t></p></div></section>
+
+<section class="pg" id="p-gal"><h2>Our photos</h2>
+<div class="tabs"><button class="btn alt sm" data-lay="grid">Grid</button><button class="btn alt sm" data-lay="pola">Polaroid wall</button><button class="btn alt sm" data-lay="film">Film strip</button><button class="btn alt sm" data-lay="col">Collage</button><button class="btn alt sm" data-lay="scrap">Scrapbook</button><button class="btn sm own" id="addg">+ Add photos</button></div>
+<div id="gal"></div></section>
+
+<section class="pg" id="p-hd"><h2>The first time we held hands</h2>
+<div class="two"><div class="fr"><ph k="h1"></ph><p class="cap"><t k="h1c">The real moment</t></p></div><div class="fr" id="fr2"><ph k="h2"></ph><p class="cap"><t k="h2c">How I drew it</t></p></div></div>
+<p class="hw" style="font-size:30px;text-align:center"><t k="hcap">The first time our hands found each other.</t></p>
+<p style="text-align:center"><button class="btn" id="wipe">Recreation</button></p></section>
+
+
+
+<section class="pg" id="p-pol"><h2>Six little memories</h2><div class="six" id="six"></div>
+<div class="tape pl" id="vc"><div style="flex:1"><div class="reels"><div class="reel"></div><div class="reel"></div></div><div class="pl"><button class="pbtn" id="vb">▶</button><input type="range" id="vbar" min="0" max="1000" value="0"></div>
+<p class="hw" style="font-size:22px;margin:8px 0 0"><t k="vmsg">A little piece of me, whenever you miss me.</t></p></div></div>
+<p style="text-align:center"><button class="btn sm ownerbtn" id="vup">Upload my voice</button></p><audio id="vo" preload="auto"></audio></section>
+
+<section class="pg" id="p-lt"><h2>The love letter</h2><p class="ownerbtn"><button class="btn sm" id="lup">🎙 Upload voice note for the letter</button></p><div class="env" id="env2"><div class="back"></div><div class="lt"><h2>For you ♡</h2><p class="mute">tap to open</p></div><div class="flap"></div><div class="front"></div></div>
+<div class="paper"><div class="tape pl" style="font:500 16px Quicksand,sans-serif"><div style="flex:1"><div class="reels"><div class="reel"></div><div class="reel"></div></div><div class="pl"><button class="pbtn" id="lvb" aria-label="Play or pause">▶</button><input type="range" id="lbar" min="0" max="1000" value="0"></div><p class="hw" style="font-size:22px;margin:8px 0 0"><t k="lmsg">Listen to this first, then read my letter.</t></p></div></div><p class="hw" style="font-size:26px;margin:80px 0 12px"><button class="pbtn" id="lmb" aria-label="Play or pause our song">♪</button> <t k="lmt">Tap to play our song while you read</t></p><audio id="lv" preload="auto"></audio><t k="letter">My love,
+
+Seven months ago I had no idea how much room you would take up in my heart. Now I can’t picture my days without you in them.
+
+Thank you for the way you listen, the way you laugh, and the way you make hard days softer. I love the little things most: your hand in mine, your silly jokes, the quiet moments that feel like home.
+
+I don’t know everything about the future, but I know I want you in it.
+
+Yours, always ♡</t></div></section>
+
+<section class="pg" id="p-more"><h2>Little surprises</h2>
+<div class="card"><b>Together for</b><p id="cn"></p><p class="own">Start date: <input type="date" id="sd"></p></div>
+<h2 style="font-size:34px">Reasons I love you</h2><p><button class="btn sm own" data-add="rs">+ Reason</button></p><div id="rsn"></div>
+
+
+<h2 style="font-size:34px">Secret page</h2><div class="card"><p class="mute"><t k="hint">Hint: something I promised you.</t></p><input type="password" id="sp" placeholder="password"> <button class="btn sm" id="sb">Open</button>
+<div id="sx" hidden><p class="cap" style="font-size:26px"><t k="secret">You found it. You are my favourite person in the whole world.</t></p>
+<div class="tape pl"><div style="flex:1"><div class="reels"><div class="reel"></div><div class="reel"></div></div><div class="pl"><button class="pbtn" id="svb" aria-label="Play or pause">▶</button><input type="range" id="sbar" min="0" max="1000" value="0"></div><p class="hw" style="font-size:22px;margin:8px 0 0"><t k="smsg">A secret message, just for you.</t></p></div></div>
+<audio id="sa" preload="auto"></audio></div><p class="ownerbtn"><button class="btn sm" id="sup2">🎙 Upload secret voice</button></p></div></section>
+
+<section class="pg" id="p-jar"><div class="mid"><h2 style="margin:0"><t k="jl">A jar full of kisses, just for you ♡</t></h2>
+<div class="jar" id="jar" role="button" tabindex="0" aria-label="Open the jar"><div class="lid"></div><div class="glass" id="gl"></div></div>
+<p class="mute">Tap the jar</p><p><b>Kisses sent: ∞</b></p></div></section>
+
+<section class="pg" id="p-fin"><div class="mid"><h2 style="font-size:clamp(36px,9vw,60px)"><t k="fq">Seven months down, forever to go?</t></h2>
+<div id="yn"><button class="btn" id="fy">Yes ♡</button><button class="btn alt" id="fn">No</button></div></div></section>
+
+<div id="bye"><div class="h">♥</div><div class="hw"><t k="bye">If I could go back to the beginning, I’d still choose you. Every single time.</t></div><button class="btn" id="bk">Back to our world</button></div>
+
+<div id="mp" class="pl"><button id="pb" aria-label="Play or pause">▶</button><div class="mi"><b><t k="songt">Our song</t></b><input type="range" id="pbar" min="0" max="1000" value="0" aria-label="Song progress"></div><input type="range" id="vol" min="0" max="1" step=".05" value=".8" aria-label="Volume"><button class="btn sm ownerbtn" id="sup">♪ Upload</button><audio id="au" preload="auto"></audio></div>
+
+<div id="set"><div class="card"><b>Owner settings</b>
+<button class="btn alt" data-a="edit">✎ Edit mode on/off</button><button class="btn alt" data-a="song">♪ Upload our song</button><button class="btn alt" data-a="pk">🔑 Change passkey</button><button class="btn alt" data-a="ow">🛡 Change owner code</button><button class="btn alt" data-a="sp">🔒 Secret page password</button><button class="btn alt" data-a="snd">🔊 Kiss sound on/off</button><button class="btn" data-a="exp">⬇ Export backup</button><button class="btn" data-a="imp">⬆ Import backup</button><button class="btn alt" data-a="x">Close</button></div></div>
+<div id="aq"><div class="card"><b id="aqm"></b><input id="aqi" type="text" autocomplete="off"><div><button class="btn" id="aqo">OK</button> <button class="btn alt" id="aqc">Cancel</button></div></div></div>
+<div id="lb"><div><img alt=""><p class="hw" style="font-size:28px"></p></div></div><div id="ts"></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],B=document.body;
+let S={},DB,owner=false;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* ---- storage: IndexedDB key/value (photos, audio, texts) ---- */
+function init(){return new Promise(res=>{try{const q=indexedDB.open('us',1);q.onupgradeneeded=()=>q.result.createObjectStore('kv');q.onerror=()=>res();
+q.onsuccess=()=>{DB=q.result;const c=DB.transaction('kv').objectStore('kv').openCursor();c.onsuccess=()=>{const k=c.result;if(k){S[k.key]=k.value;k.continue()}else res()};c.onerror=()=>res()}}catch(e){res()}})}
+function put(k,v){S[k]=v;try{DB.transaction('kv','readwrite').objectStore('kv').put(v,k)}catch(e){}}
+const cfg=(k,d)=>S['cfg:'+k]??d,same=(a,b)=>String(a).trim().toLowerCase()===String(b).toLowerCase();
+function toast(m){const t=$('#ts');t.textContent=m;t.classList.add('on');clearTimeout(t.h);t.h=setTimeout(()=>t.classList.remove('on'),2200)}
+/* ---- editable text <t k="id">default</t> and photo slots <ph k="id"></ph> ---- */
+const urls={};
+function slot(s){const k=s.dataset.i,b=S['i:'+k];if(b){const u=(urls[k]&&urls[k].b===b)?urls[k].u:(urls[k]={b,u:URL.createObjectURL(b)}).u;s.innerHTML='<img src="'+u+'" alt="">';s.classList.add('has')}else{s.innerHTML='';s.classList.remove('has')}}
+function hydrate(r=document){$$('t',r).forEach(e=>{const s=document.createElement('span');s.className='ed';s.dataset.t=e.getAttribute('k');s.dataset.d=e.textContent;e.replaceWith(s)});
+$$('ph',r).forEach(e=>{const d=document.createElement('div');d.className='slot';d.dataset.i=e.getAttribute('k');e.replaceWith(d)});
+$$('[data-t]',r).forEach(e=>{e.textContent=S['t:'+e.dataset.t]??e.dataset.d;e.contentEditable=B.classList.contains('edit')});$$('.slot',r).forEach(slot)}
+const fi=document.createElement('input');fi.type='file';fi.style.cssText='position:fixed;left:-999px;top:0;opacity:0';B.appendChild(fi);
+function pick(acc,cb,multi){fi.accept=acc;fi.multiple=!!multi;fi.value='';fi.onchange=()=>cb([...fi.files]);fi.click()}
+async function shrink(f){try{const b=await createImageBitmap(f),k=Math.min(1,1400/Math.max(b.width,b.height)),c=document.createElement('canvas');c.width=b.width*k;c.height=b.height*k;c.getContext('2d').drawImage(b,0,0,c.width,c.height);return await new Promise(r=>c.toBlob(r,'image/jpeg',.85))}catch(e){return f}}
+document.addEventListener('focusout',e=>{const t=e.target.dataset&&e.target.dataset.t;if(t)put('t:'+t,e.target.innerText.trim())});
+document.addEventListener('click',e=>{const s=e.target.closest('.slot');
+if(s){if(B.classList.contains('edit'))pick('image/*',async([f])=>{if(f){put('i:'+s.dataset.i,await shrink(f));slot(s)}});else if(s.classList.contains('has')){const c=s.closest('.it,.fr,.pol');$('#lb img').src=$('img',s).src;$('#lb p').textContent=c?c.querySelector('.ed')?.textContent||'':'';$('#lb').classList.add('on')}return}
+const x=e.target.closest('[data-x]');if(x){const it=x.closest('.it'),k=it.dataset.k;put('L:'+k,ids(k).filter(i=>i!=it.dataset.id));draw(k)}
+const r=e.target.closest('.rs');if(r&&!B.classList.contains('edit'))r.classList.toggle('on')});
+$('#lb').onclick=()=>$('#lb').classList.remove('on');
+/* ---- growable lists (photos, journal, reasons, letters, dreams) ---- */
+const LC={};
+function lst(k,n,box,tpl,cls=''){LC[k]=[n,box,tpl,cls];draw(k)}
+const ids=k=>S['L:'+k]||Array.from({length:LC[k][0]},(_,i)=>i+1);
+function draw(k){const[,box,tpl,cls]=LC[k];$(box).innerHTML=ids(k).map(i=>`<div class="it ${cls}" data-k="${k}" data-id="${i}"><b class="own x" data-x>✕</b>${tpl(i)}</div>`).join('');hydrate($(box))}
+function add(k){const a=ids(k);put('L:'+k,[...a,Math.max(0,...a)+1]);draw(k)}
+$$('[data-add]').forEach(b=>b.onclick=()=>add(b.dataset.add));
+function all(){lst('gal',6,'#gal',i=>`<ph k="g${i}"></ph><figcaption><t k="gc${i}">Our caption</t><small><t k="gd${i}">date</t></small></figcaption>`,'ph');
+$('#gal').classList.add('lay','l-'+(S.lay||'grid'));
+
+lst('rs',8,'#rsn',i=>`<t k="rs${i}">A reason I love you</t>`,'rs');
+
+
+$('#six').innerHTML=[1,2,3,4,5,6].map(i=>`<div class="pol"><ph k="p${i}"></ph><div class="cap"><t k="pc${i}">Memory ${i}</t></div></div>`).join('');hydrate($('#six'));hydrate()}
+/* ---- navigation ---- */
+const MENU=[['p-tk','🎮 Love tasks'],['p-gal','📸 Our photos'],['p-hd','🤝 First hold'],['p-pol','🎞 Six polaroids'],['p-lt','💌 Love letter'],['p-more','🎁 Surprises'],['p-jar','💋 Kiss jar'],['p-fin','🌟 Finale']];
+$('#menu').innerHTML=MENU.map(m=>`<button data-go="${m[0]}">${m[1]}</button>`).join('');
+function nav(id){$$('.pg').forEach(p=>p.classList.toggle('on',p.id===id));scrollTo(0,0);const g=id=='p-gate';$('#top').style.display=g||id=='p-env'?'none':'flex';$('#home').style.visibility=id=='p-home'?'hidden':'visible';B.classList.toggle('in',!g)}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g)nav(g.dataset.go)});$('#home').onclick=()=>nav('p-home');
+/* ---- passkey gate (owner code opens editing) ---- */
+$('#go').onclick=()=>{if(same($('#pk').value,cfg('pk','forever'))){nav('p-env');burst(['💗','✨'],20,innerWidth/2,innerHeight/2)}else $('#gerr').textContent='Hmm, not quite. Try again ♡'};
+$('#pk').onkeydown=e=>{if(e.key=='Enter')$('#go').click()};
+/* in-page input box (browser prompt() is blocked in published pages) */
+function ask(m,d=''){return new Promise(r=>{const q=$('#aq'),i=$('#aqi');$('#aqm').textContent=m;i.value=d;i.type=/code|password|passkey/i.test(m)?'password':'text';q.classList.add('on');i.focus();const f=v=>{q.classList.remove('on');r(v)};$('#aqo').onclick=()=>f(i.value);$('#aqc').onclick=()=>f(null);i.onkeydown=e=>{if(e.key=='Enter')f(i.value)}})}
+$('#own').onclick=async()=>{const c=await ask('Owner code');if(c===null)return;if(same(c,cfg('ow','Akshuhehe'))){owner=true;B.classList.add('owner');nav('p-home');toast('Owner mode. Tap ✎ Edit to change anything.')}else $('#gerr').textContent='Wrong owner code'};
+$('#env1').onclick=()=>{$('#env1').classList.add('open');$('#start').style.visibility='visible'};$('#env2').onclick=()=>$('#env2').classList.toggle('open');
+$('#start').onclick=()=>nav('p-home');
+/* ---- owner tools ---- */
+function edit(on){B.classList.toggle('edit',on);$('#pen').textContent=on?'✓ Done':'✎ Edit';hydrate()}
+$('#pen').onclick=()=>edit(!B.classList.contains('edit'));$('#gear').onclick=()=>$('#set').classList.add('on');
+const ub=u=>{const[h,d]=u.split(','),s=atob(d),a=new Uint8Array(s.length);for(let i=0;i<s.length;i++)a[i]=s.charCodeAt(i);return new Blob([a],{type:(h.match(/:(.*?);/)||[0,''])[1]})};
+async function exp(){const d=window.claude&&await claude.use('downloads');if(!d)return toast('Export is not available in this view.');const o={};for(const k in S){const v=S[k];o[k]=v instanceof Blob?{u:await new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(v)})}:v}
+try{await d.save({filename:'our-memories-backup.json',data:JSON.stringify(o)})}catch(e){toast('Backup cancelled')}}
+const ACT={edit(){edit(!B.classList.contains('edit'))},song(){up('song',$('#au'))},pk(){ch('pk','New passkey for visitors')},ow(){ch('ow','New owner code')},sp(){ch('sp','New secret-page password')},snd(){put('cfg:snd',cfg('snd',1)?0:1);toast(cfg('snd',1)?'Sound on':'Sound off')},exp,imp(){pick('',async([f])=>{if(!f)return toast('No file chosen');toast('Importing…');try{const o=JSON.parse(await f.text());for(const k in o){const v=o[k];put(k,v&&v.u?ub(v.u):v)}all();setSong();setVoice();setSec();setLet();toast('Backup restored ♡')}catch(e){toast('Import failed: '+((e&&e.message)||'not a valid backup file'))}})},x(){}};
+async function ch(k,m){const v=await ask(m);if(v&&v.trim()){put('cfg:'+k,v.trim());toast('Saved ♡')}}
+$$('[data-a]').forEach(b=>b.onclick=()=>{ACT[b.dataset.a]();$('#set').classList.remove('on')});
+/* ---- audio: persistent song player + voice message ---- */
+function ctl(au,btn,bar,key){const set=()=>{if(S['a:'+key])au.src=URL.createObjectURL(S['a:'+key])};
+btn.onclick=()=>{if(!au.src)return toast('No audio uploaded yet');au.paused?au.play():au.pause()};
+au.onplay=()=>{btn.textContent='❚❚';btn.closest('.tape,#mp').classList.add('play')};au.onpause=()=>{btn.textContent='▶';btn.closest('.tape,#mp').classList.remove('play')};
+au.ontimeupdate=()=>bar.value=au.duration?au.currentTime/au.duration*1000:0;bar.oninput=()=>{if(au.duration)au.currentTime=bar.value/1000*au.duration};return set}
+function up(key,au){pick('audio/*',([f])=>{if(f){put('a:'+key,f);au.src=URL.createObjectURL(f);toast('Saved ♡')}})}
+const setSong=ctl($('#au'),$('#pb'),$('#pbar'),'song'),setVoice=ctl($('#vo'),$('#vb'),$('#vbar'),'voice'),setSec=ctl($('#sa'),$('#svb'),$('#sbar'),'secret'),setLet=ctl($('#lv'),$('#lvb'),$('#lbar'),'letter');
+$('#vol').oninput=e=>$('#au').volume=e.target.value;$('#lmb').onclick=()=>{const a=$('#au');if(!a.src)return toast('No audio uploaded yet');a.currentTime=0;a.play()};$('#sup').onclick=()=>up('song',$('#au'));$('#vup').onclick=()=>up('voice',$('#vo'));
+$('#vo').addEventListener('play',()=>$('#au').pause());$('#sa').addEventListener('play',()=>$('#au').pause());$('#sup2').onclick=()=>up('secret',$('#sa'));$('#lup').onclick=()=>up('letter',$('#lv'));$('#lv').addEventListener('play',()=>$('#au').pause());
+/* ---- gallery ---- */
+$$('[data-lay]').forEach(b=>b.onclick=()=>{put('lay',b.dataset.lay);$('#gal').className='lay l-'+b.dataset.lay});
+$('#addg').onclick=()=>pick('image/*',async fs=>{for(const f of fs){const a=ids('gal'),id=Math.max(0,...a)+1;put('i:g'+id,await shrink(f));put('L:gal',[...a,id])}draw('gal')},true);
+
+$('#wipe').onclick=()=>$('#fr2 .slot').animate([{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0)'}],{duration:1800,easing:'ease-in-out'});
+/* ---- effects ---- */
+const E=['💋','💗','❤️','💖','😘','💌','✨','🩷','💕'];
+function burst(list,n,cx,cy,big){const W=innerWidth,H=innerHeight,fx=$('#fx'),sp=big?1.3:.5;
+for(let i=0;i<n;i++){const e=document.createElement('span');e.className='k';e.textContent=list[i%list.length];e.style.cssText=`left:${cx}px;top:${cy}px;font-size:${18+Math.random()*14}px`;fx.appendChild(e);
+const s=big&&Math.random()<.2?3+Math.random()*3:.8+Math.random()*1.2,tx=(Math.random()-.5)*W*sp,ty=-Math.random()*H*sp*.7,r=(Math.random()-.5)*900;
+e.animate([{transform:'translate(-50%,-50%) scale(.2)',opacity:1},{transform:`translate(${tx}px,${ty}px) rotate(${r/2}deg) scale(${s})`,opacity:1,offset:.45},{transform:`translate(${tx*1.1}px,${H*.6}px) rotate(${r}deg) scale(${s*.6})`,opacity:0}],{duration:1800+Math.random()*2400,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>e.remove()}}
+function blip(){if(!cfg('snd',1))return;try{const a=new(window.AudioContext||webkitAudioContext)(),o=a.createOscillator(),g=a.createGain(),t=a.currentTime;o.frequency.setValueAtTime(500,t);o.frequency.exponentialRampToValueAtTime(1100,t+.12);g.gain.setValueAtTime(.2,t);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.connect(g);g.connect(a.destination);o.start();o.stop(t+.25)}catch(e){}}
+for(let i=0;i<14;i++){const h=document.createElement('i');h.textContent='♥';h.style.cssText=`left:${Math.random()*100}%;font-size:${12+Math.random()*22}px;animation-duration:${9+Math.random()*10}s;animation-delay:-${Math.random()*15}s`;$('#fl').appendChild(h)}
+$('#gl').innerHTML=Array.from({length:44},(_,i)=>`<span>${E[i%E.length]}</span>`).join('');
+const jar=$('#jar');function kiss(){jar.classList.add('shake');setTimeout(()=>{jar.classList.remove('shake');jar.classList.add('pop');setTimeout(()=>jar.classList.remove('pop'),1600);const r=jar.getBoundingClientRect();burst(E,170,r.left+r.width/2,r.top+40,true);blip();const m=$('#km');m.classList.remove('on');void m.offsetWidth;m.classList.add('on')},700)}
+jar.onclick=kiss;jar.onkeydown=e=>{if(e.key=='Enter'||e.key==' ')kiss()};
+/* ---- tasks ---- */
+function upd(){const p=S.prog||{},n=['c','r','m'].filter(k=>p[k]).length;$('#bar i').style.width=n/3*100+'%';$('#pc').textContent=n+' of 3 tasks done';$('#unl').disabled=n<3}
+function done(k){const p={...(S.prog||{})};if(p[k])return;p[k]=1;put('prog',p);upd();burst(['💗','✨','🎀'],26,innerWidth/2,innerHeight/2);toast(['Aww, +1 kiss 💋','Adorable! 💗','So clever ✨','You’re the best ♡'][Math.floor(Math.random()*4)])}
+$$('[data-skip]').forEach(b=>b.onclick=()=>done(b.dataset.skip));$('#unl').onclick=()=>{$('#sn').hidden=false;burst(['💌','💗'],40,innerWidth/2,innerHeight/2,true)};
+const QD={c:[['Who is more likely to fall asleep first?','Me','You','Both of us'],['What is our favourite thing to do together?','Cuddle','Watch movies','Eat out'],['Who says sorry first?','Me','You','Nobody 😅']],r:[['Where was our first date?','Edit this question','Somewhere else','Not sure'],['What did we do the day we got together?','Edit this question','Nothing','Not sure'],['What is our song?','Edit this question','No idea','Not sure']]};
+function quiz(k){const qs=S['Q'+k]||QD[k],b=$('#q'+k);let i=0;const go=()=>{if(i>=qs.length){b.innerHTML='<p>All done! 🎉</p>';return done(k)}const[q,r,...w]=qs[i],o=[r,...w].sort(()=>Math.random()-.5);b.innerHTML='<p><b>'+esc(q)+'</b></p>'+o.map(x=>`<button class="btn alt opt" style="margin:0 6px 6px 0">${esc(x)}</button>`).join('');$$('.opt',b).forEach(x=>x.onclick=()=>{toast(x.textContent==r?'Yes! 💗':'Aww, it was “'+r+'” 😘');i++;go()})};go()}
+$$('[data-eq]').forEach(b=>b.onclick=async()=>{const k=b.dataset.eq,o=[];for(const q of S['Q'+k]||QD[k]){const t=await ask('Question | right answer | wrong | wrong',q.join(' | '));o.push(t?t.split('|').map(s=>s.trim()):q)}put('Q'+k,o);quiz(k)});
+function match(){const P=[['🎬','First movie'],['🍕','Our food'],['🌙','Late calls'],['🎵','Our song'],['💌','Love notes'],['🌹','Special date']],c=P.flatMap((p,i)=>[[i,p[0]],[i,p[1]]]).sort(()=>Math.random()-.5);let a=null,n=0;
+$('#mg').innerHTML=c.map(x=>`<button class="mc" data-i="${x[0]}">${x[1]}</button>`).join('');
+$$('.mc').forEach(b=>b.onclick=()=>{if(b.classList.contains('ok')||b===a||b.classList.contains('up')&&!a)return;b.classList.add('up');if(!a){a=b;return}
+if(a.dataset.i===b.dataset.i){a.classList.add('ok');b.classList.add('ok');a=null;if(++n==6)done('m')}else{const x=a;a=null;setTimeout(()=>{x.classList.remove('up');b.classList.remove('up')},600)}})}
+function hide(){['p-gal','p-hd','p-pol','p-lt','p-more'].slice(0,5-(S.hf||0)).forEach(id=>{const h=document.createElement('i');h.className='hh';h.textContent='♡';h.style.cssText=`top:${20+Math.random()*60}%;left:${8+Math.random()*80}%`;h.onclick=()=>{h.remove();put('hf',(S.hf||0)+1);upd();toast('Found a heart! '+S.hf+'/5');if(S.hf>=5)done('h')};$('#'+id).appendChild(h)})}
+/* ---- surprises ---- */
+$('#sd').value=cfg('start','2026-04-15');$('#sd').onchange=e=>{put('cfg:start',e.target.value);tick()};
+function tick(){const d=Date.now()-new Date(cfg('start','2026-04-15')+'T00:00:00');if(d<0)return $('#cn').textContent='Not yet…';const m=Math.floor(d/6e4);$('#cn').innerHTML=`<b>${Math.floor(m/1440)}</b> days <b>${Math.floor(m%1440/60)}</b> hours <b>${m%60}</b> minutes`}
+$('#sb').onclick=()=>{if(same($('#sp').value,cfg('sp','forever'))){$('#sx').hidden=false;burst(['💗'],20,innerWidth/2,innerHeight/2)}else toast('Not that one 😏')};
+let c=0;const fn=$('#fn'),yn=$('#yn');
+function yes(){$('#bye').classList.add('on');burst(['💗','✨'],60,innerWidth/2,innerHeight/2,true)}
+fn.onpointerenter=fn.onpointerdown=e=>{if(c<5&&(e.type=='pointerdown'||e.pointerType=='mouse')){c++;fn.style.left=Math.random()*(yn.clientWidth-80)+'px';fn.style.top=Math.random()*80+'px'}};
+fn.onclick=()=>{if(c>=5){toast('Fine, you win 😏');yes()}};$('#fy').onclick=yes;$('#bk').onclick=()=>{$('#bye').classList.remove('on');nav('p-home')};
+for(let i=0;i<34;i++){const s=document.createElement('s');s.textContent='✦';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;font-size:${10+Math.random()*16}px;animation-delay:-${Math.random()*2}s`;$('#bye').appendChild(s)}
+/* ---- start ---- */
+init().then(()=>{all();setSong();setVoice();setSec();setLet();quiz('c');quiz('r');match();upd();tick();setInterval(tick,1000)});
+</script>
+</body>
+</html>
